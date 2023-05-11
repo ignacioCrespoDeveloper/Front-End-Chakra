@@ -1,26 +1,26 @@
 [
   {
-    "name":"Horizon UI PRO",
-    "status": "Approved",
-    "date": "18 Apr 2022",
-    "progress": 75.5  
+    "name":"CAP - FCB",
+    "result": "Approved",
+    "date": "18 Apr 2023",
+    "xgol": 75.5  
   },
   {
-    "name":"Horizon UI Free",
-    "status": "Disable",
-    "date": "18 Apr 2022",
-    "progress": 25.5  
+    "name":"FCB - BITA",
+    "result": "Disable",
+    "date": "15 Apr 2023",
+    "xgol": 25.5  
   },
   {
-    "name":"Marketplace",
-    "status": "Error",
-    "date": "20 May 2021",
-    "progress": 90  
+    "name":"RZ - FCB",
+    "result": "Error",
+    "date": "12 Apr 2023",
+    "xgol": 90  
   },
   {
-    "name":"Weekly Updates",
-    "status": "Approved",
-    "date": "12 Jul 2021",
-    "progress": 50.5  
+    "name":"FCB - DEP",
+    "result": "Approved",
+    "date": "9 Apr 2023",
+    "xgol": 50.5  
   }
 ]

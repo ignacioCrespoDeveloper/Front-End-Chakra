@@ -1,5 +1,5 @@
 // Chakra imports
-import { SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react";
+import { SimpleGrid, Image, Text, useColorModeValue } from "@chakra-ui/react";
 // Custom components
 import Card from "components/card/Card.js";
 import React from "react";
@@ -19,50 +19,40 @@ export default function GeneralInformation(props) {
     <Card mb={{ base: "0px", "2xl": "20px" }} {...rest}>
       <Text
         color={textColorPrimary}
-        fontWeight='bold'
-        fontSize='2xl'
-        mt='10px'
-        mb='4px'>
+        fontWeight="bold"
+        fontSize="2xl"
+        mt="10px"
+        mb="4px"
+      >
         General Information
       </Text>
-      <Text color={textColorSecondary} fontSize='md' me='26px' mb='40px'>
-        As we live, our hearts turn colder. Cause pain is what we go through as
-        we become older. We get insulted by others, lose trust for those others.
-        We get back stabbed by friends. It becomes harder for us to give others
-        a hand. We get our heart broken by people we love, even that we give
-        them all...
-      </Text>
-      <SimpleGrid columns='2' gap='20px'>
+
+      <Image
+        src="https://pbs.twimg.com/profile_images/1581660732/fcbompleto_400x400.png"
+        alt="Horizon UI"
+        width="25%"
+      />
+      <SimpleGrid columns="2" gap="5px">
+        <Information boxShadow={cardShadow} title="Country" value="Uruguay" />
         <Information
           boxShadow={cardShadow}
-          title='Education'
-          value='Stanford University'
+          title="League"
+          value="Primera Divion"
         />
         <Information
           boxShadow={cardShadow}
-          title='Languages'
-          value='English, Spanish, Italian'
+          title="Stadium"
+          value="El Bolbético (40.000)"
         />
         <Information
           boxShadow={cardShadow}
-          title='Department'
-          value='Product Design'
+          title="Fans Pressure"
+          value="Amazing"
         />
-        <Information
-          boxShadow={cardShadow}
-          title='Work History'
-          value='Google, Facebook'
-        />
-        <Information
-          boxShadow={cardShadow}
-          title='Organization'
-          value='Simmmple Web LLC'
-        />
-        <Information
-          boxShadow={cardShadow}
-          title='Birthday'
-          value='20 July 1986'
-        />
+        <Information boxShadow={cardShadow} title="Reputation" value="Bad" />
+        <Information boxShadow={cardShadow} title="Academy" value="Great" />
+        <Information boxShadow={cardShadow} title="Scouts" value="Good" />
+        <Information boxShadow={cardShadow} title="Training" value="Good" />
       </SimpleGrid>
     </Card>
   );
