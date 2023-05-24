@@ -1,68 +1,79 @@
 [
   {
-    "name":"Marketplace",
-    "tech": ["apple","android","windows"], 
-    "date": "12.Jan.2021",
-    "progress": 75.5  
+    "country": "US",
+    "name":"Dario Rodriguez",
+    "position": ["Defender"], 
+    "current": 2,
+    "potential": 3
   },
   {
-    "name":"Venus DB PRO",
-    "tech": ["apple" ], 
-    "date": "21.Feb.2021",
-    "progress": 35.4  
+    "country": "US",
+    "name":"Carlos Valdez",
+    "position": ["Defender"], 
+    "current": 3,
+    "potential": 5  
   },
   {
-    "name":"Venus DS",
-    "tech": ["apple" ,"windows"], 
-    "date": "13.Mar.2021",
-    "progress": 25  
+    "country": "US",
+    "name":"Rio Ferdinand",
+    "position": ["Defender"], 
+    "current": 4,
+    "potential": 4 
   },
   {
-    "name":"Venus 3D Asset",
-    "tech": ["apple","android","windows"], 
-    "date": "24.Jan.2021",
-    "progress": 100  
+    "country": "US",
+    "name":"Mark De Jong",
+    "position": ["Midfielder"], 
+    "current": 4,
+    "potential": 5  
   },
   {
-    "name":"Marketplace",
-    "tech": ["apple", "windows"], 
-    "date": "Oct 24, 2022",
-    "progress": 75.5  
+    "country": "US",
+    "name":"Luka Modric",
+    "position": ["Midfielder"],  
+    "current": 3,
+    "potential": 4  
   },
   {
-    "name":"Marketplace",
-    "tech": ["apple","android","windows"], 
-    "date": "Oct 24, 2022",
-    "progress": 75.5  
+    "country": "US",
+    "name":"Federico Valverde",
+    "position": ["Midfielder"],  
+    "current": 3,
+    "potential": 3  
   },
   {
-    "name":"Marketplace",
-    "tech": ["apple","android","windows"], 
-    "date": "12.Jan.2021",
-    "progress": 75.5  
+    "country": "US",
+    "name":"Toni Kross",
+    "position": ["Midfielder"], 
+    "current": 1,
+    "potential": 3 
   },
   {
-    "name":"Venus DB PRO",
-    "tech": ["apple" ], 
-    "date": "21.Feb.2021",
-    "progress": 35.4  
+    "country": "US",
+    "name":"Vinicius Jr",
+    "position": ["Midfielder"], 
+    "current": 2,
+    "potential": 4  
   },
   {
-    "name":"Venus DS",
-    "tech": ["apple" ,"windows"], 
-    "date": "13.Mar.2021",
-    "progress": 25  
+    "country": "US",
+    "name":"Lionel Messi",
+    "position": ["Forward"], 
+    "current": 2,
+    "potential": 3  
   },
   {
-    "name":"Venus 3D Asset",
-    "tech": ["apple","android","windows"], 
-    "date": "24.Jan.2021",
-    "progress": 100  
+    "country": "US",
+    "name":"Cristiano Ronaldo",
+    "position": ["Forward"], 
+    "current": 2,
+    "potential": 5  
   },
   {
-    "name":"Marketplace",
-    "tech": ["apple", "windows"], 
-    "date": "Oct 24, 2022",
-    "progress": 75.5  
+    "country": "US",
+    "name":"Luis Suarez",
+    "position": ["Forward"], 
+    "current": 2,
+    "potential": 5  
   }
 ]
