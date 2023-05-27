@@ -22,7 +22,7 @@
 */
 
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 // Chakra imports
 import {
   Box,
@@ -69,6 +69,7 @@ function SignIn() {
   );
   const [showSingIn, setShowSingIn] = React.useState(true);
   const [show, setShow] = React.useState(false);
+  const [redirect, setRedirect] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
@@ -86,6 +87,49 @@ function SignIn() {
     if (e && e.target) {
       const { name, value } = e.target;
 
+      // Perform validations based on the field name
+      switch (name) {
+        case "email":
+          // Check if the email is not empty
+          if (value.trim() === "") {
+            console.log("Email cannot be empty");
+          } else {
+            // Validate if the email is in a correct format using a regular expression
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+              console.log("Invalid email format");
+            }
+          }
+          break;
+        case "password":
+          // Check if the password is not empty
+          if (value.trim() === "") {
+            console.log("Password cannot be empty");
+          } else {
+            // Enforce password complexity rules, e.g., minimum length
+            if (value.length < 6) {
+              console.log("Password must be at least 6 characters long");
+            }
+            // Add more password complexity validations as needed
+          }
+          break;
+        case "clubName":
+          // Check if the club name is not empty
+          if (value.trim() === "") {
+            console.log("Club name cannot be empty");
+          }
+          break;
+        case "countryName":
+          // Check if the country name is not empty
+          if (value.trim() === "") {
+            console.log("Country name cannot be empty");
+          }
+          break;
+        default:
+          break;
+      }
+
+      // Update the form data state
       if (name === "email") {
         setFormData((prevData) => ({
           ...prevData,
@@ -110,6 +154,7 @@ function SignIn() {
       });
 
       console.log("Registration successful");
+      setRedirect(true);
       // You can handle the response data here if needed
     } catch (error) {
       console.error("Registration error:", error);
@@ -119,6 +164,7 @@ function SignIn() {
 
   return (
     <DefaultAuth illustrationBackground={illustration} image={illustration}>
+      {redirect && <Redirect to="/ruta-deseada" />}
       {showSingIn ? (
         <Flex
           maxW={{ base: "100%", md: "max-content" }}
