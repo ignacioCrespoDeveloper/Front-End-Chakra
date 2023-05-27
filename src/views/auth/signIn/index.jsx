@@ -48,6 +48,7 @@ import illustration from "assets/img/auth/testing.png";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
+import axios from "axios";
 
 function SignIn() {
   // Chakra color mode
@@ -68,10 +69,53 @@ function SignIn() {
   );
   const [showSingIn, setShowSingIn] = React.useState(true);
   const [show, setShow] = React.useState(false);
+  const [formData, setFormData] = React.useState({
+    name: "",
+    email: "",
+    password: "",
+    clubName: "",
+    countryName: "",
+    firstColor: "#F50000",
+    secondColor: "#FFFFFF",
+  });
+
   const handleClick = () => setShow(!show);
   const changeToRegister = () => setShowSingIn(!showSingIn);
 
-  const handleRegister = () => console.log("Register");
+  const handleChange = (e) => {
+    if (e && e.target) {
+      const { name, value } = e.target;
+
+      if (name === "email") {
+        setFormData((prevData) => ({
+          ...prevData,
+          email: value,
+          name: value,
+        }));
+      } else {
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }
+    }
+  };
+
+  const handleRegister = async () => {
+    console.log("LLAMANDO A REGISTER");
+    console.log(formData);
+    try {
+      const response = await axios.post("http://localhost:3000/user/register", {
+        formData,
+      });
+
+      console.log("Registration successful");
+      // You can handle the response data here if needed
+    } catch (error) {
+      console.error("Registration error:", error);
+      // Handle any errors that occur during the request
+    }
+  };
 
   return (
     <DefaultAuth illustrationBackground={illustration} image={illustration}>
@@ -333,6 +377,8 @@ function SignIn() {
                 mb="15px"
                 fontWeight="500"
                 size="lg"
+                onChange={handleChange}
+                name="email"
               />
               <FormLabel
                 ms="4px"
@@ -352,6 +398,8 @@ function SignIn() {
                   size="lg"
                   type={show ? "text" : "password"}
                   variant="auth"
+                  onChange={handleChange}
+                  name="password"
                 />
                 <InputRightElement display="flex" alignItems="center" mt="4px">
                   <Icon
@@ -382,6 +430,8 @@ function SignIn() {
                 mb="15px"
                 fontWeight="500"
                 size="lg"
+                onChange={handleChange}
+                name="clubName"
               />
               <FormLabel
                 display="flex"
@@ -402,6 +452,8 @@ function SignIn() {
                 mb="15px"
                 fontWeight="500"
                 size="lg"
+                onChange={handleChange}
+                name="countryName"
               >
                 <option value="Argentina">Argentina</option>
                 <option value="Brazil">Brazil</option>
