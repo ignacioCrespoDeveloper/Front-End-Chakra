@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "assets/css/App.css";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import AuthLayout from "layouts/auth";
+import AuthLayout from "layouts/auth/singin";
+import RegisterLayout from "layouts/auth/register";
 import AdminLayout from "layouts/admin";
 import RTLLayout from "layouts/rtl";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -16,9 +17,9 @@ ReactDOM.render(
         <HashRouter>
           <Switch>
             <Route path={`/auth`} component={AuthLayout} />
+            <Route path={`/auth/register`} component={RegisterLayout} />
             <Route path={`/admin`} component={AdminLayout} />
-            <Route path={`/rtl`} component={RTLLayout} />
-            <Redirect from='/' to='/admin' />
+            <Redirect from="/" to="/admin" />
           </Switch>
         </HashRouter>
       </ThemeEditorProvider>

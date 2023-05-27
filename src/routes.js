@@ -9,15 +9,17 @@ import {
   MdOutlineShoppingCart,
 } from "react-icons/md";
 
-// Admin Imports
+// Admin Imports VIEWS
 import MainDashboard from "views/admin/default";
 import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
 import DataTables from "views/admin/dataTables";
-import RTL from "views/admin/rtl";
 
-// Auth Imports
+// Auth Imports VIEWS
 import SignInCentered from "views/auth/signIn";
+
+// Auth Imports LAYOUTS
+import LoginLayout from "layouts/auth/singin";
 
 const routes = [
   {
@@ -64,11 +66,11 @@ const routes = [
     component: SignInCentered,
   },
   {
-    name: "RTL Admin",
-    layout: "/rtl",
-    path: "/rtl-default",
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
-    component: RTL,
+    name: "Create Account",
+    layout: LoginLayout,
+    path: "/register",
+    icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
+    component: SignInCentered,
   },
 ];
 
