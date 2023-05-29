@@ -1,10 +1,27 @@
 // Chakra imports
-import { Avatar, Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Avatar,
+  Grid,
+  GridItem,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import Card from "components/card/Card.js";
 import React from "react";
+import Flag from "../../../../assets/img/countryFlags/libera.png";
 
 export default function Banner(props) {
-  const { banner, avatar, name, job, posts, followers, following } = props;
+  const {
+    banner,
+    avatar,
+    name,
+    position,
+    age,
+    height,
+    weight,
+    preferredFoot,
+    country,
+  } = props;
   // Chakra Color Mode
   const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
   const textColorSecondary = "gray.400";
@@ -12,56 +29,88 @@ export default function Banner(props) {
     "white !important",
     "#111C44 !important"
   );
+
   return (
-    <Card mb={{ base: "0px", lg: "20px" }} align='center'>
-      <Box
-        bg={`url(${banner})`}
-        bgSize='cover'
-        borderRadius='16px'
-        h='131px'
-        w='100%'
-      />
+    <Card mb={{ base: "0px", lg: "20px" }} align="center">
       <Avatar
-        mx='auto'
+        mx="auto"
         src={avatar}
-        h='87px'
-        w='87px'
-        mt='-43px'
-        border='4px solid'
+        h="150px"
+        w="150px"
+        mt="40px"
+        border="4px solid"
         borderColor={borderColor}
       />
-      <Text color={textColorPrimary} fontWeight='bold' fontSize='xl' mt='10px'>
+      <Text color={textColorPrimary} fontWeight="bold" fontSize="xl" mt="10px">
         {name}
       </Text>
-      <Text color={textColorSecondary} fontSize='sm'>
-        {job}
+      <Text color={textColorSecondary} fontSize="sm">
+        {position}
       </Text>
-      <Flex w='max-content' mx='auto' mt='26px'>
-        <Flex mx='auto' me='60px' align='center' direction='column'>
-          <Text color={textColorPrimary} fontSize='2xl' fontWeight='700'>
-            {posts}
+      <Grid
+        templateColumns="repeat(6, 1fr)"
+        gap={4}
+        w="max-content"
+        mx="auto"
+        mt="20px"
+      >
+        <GridItem
+          colSpan={2}
+          mx="auto"
+          me="40px"
+          align="center"
+          direction="column"
+        >
+          <Text color={textColorPrimary} fontSize="2xl" fontWeight="700">
+            {age}
           </Text>
-          <Text color={textColorSecondary} fontSize='sm' fontWeight='400'>
-            Posts
+          <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
+            years old
           </Text>
-        </Flex>
-        <Flex mx='auto' me='60px' align='center' direction='column'>
-          <Text color={textColorPrimary} fontSize='2xl' fontWeight='700'>
-            {followers}
+        </GridItem>
+        <GridItem
+          colSpan={2}
+          mx="auto"
+          me="40px"
+          align="center"
+          direction="column"
+        >
+          <Text color={textColorPrimary} fontSize="2xl" fontWeight="700">
+            {height}
           </Text>
-          <Text color={textColorSecondary} fontSize='sm' fontWeight='400'>
-            Followers
+          <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
+            height
           </Text>
-        </Flex>
-        <Flex mx='auto' align='center' direction='column'>
-          <Text color={textColorPrimary} fontSize='2xl' fontWeight='700'>
-            {following}
+        </GridItem>
+        <GridItem
+          colSpan={2}
+          mx="auto"
+          me="40px"
+          align="center"
+          direction="column"
+        >
+          <Text color={textColorPrimary} fontSize="2xl" fontWeight="700">
+            {weight}
           </Text>
-          <Text color={textColorSecondary} fontSize='sm' fontWeight='400'>
-            Following
+          <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
+            weight
           </Text>
-        </Flex>
-      </Flex>
+        </GridItem>
+        <GridItem colSpan={3} me="40px" align="center" direction="column">
+          <Avatar mx="auto" src={Flag} h="40px" w="40px" />
+          <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
+            country
+          </Text>
+        </GridItem>
+        <GridItem colSpan={3} me="40px" align="center" direction="column">
+          <Text color={textColorPrimary} fontSize="2xl" fontWeight="700">
+            {preferredFoot}
+          </Text>
+          <Text color={textColorSecondary} fontSize="sm" fontWeight="400">
+            foot
+          </Text>
+        </GridItem>
+      </Grid>
     </Card>
   );
 }

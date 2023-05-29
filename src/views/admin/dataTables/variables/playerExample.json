@@ -1,0 +1,37 @@
+[
+    {
+      "name":"SC",
+      "current": 40,
+      "potential":58
+    },
+    {
+        "name":"OP",
+        "current": 48,
+        "potential":63
+      },    {
+        "name":"BC",
+        "current": 21,
+        "potential":42
+      },    {
+        "name":"PA",
+        "current": 16,
+        "potential":30
+      },    {
+        "name":"AE",
+        "current": 54,
+        "potential":91
+      },    {
+        "name":"CO",
+        "current": 29,
+        "potential":47
+      },    {
+        "name":"TA",
+        "current": 7,
+        "potential":18
+      },    {
+        "name":"DP",
+        "current": 16,
+        "potential":18
+      }
+  ]
+  
