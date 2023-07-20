@@ -149,9 +149,10 @@ function SignIn() {
     console.log("LLAMANDO A REGISTER");
     console.log(formData);
     try {
-      const response = await axios.post("http://localhost:3000/user/register", {
-        formData,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/user/register",
+        formData
+      );
 
       console.log("Registration successful");
       setRedirect(true);
